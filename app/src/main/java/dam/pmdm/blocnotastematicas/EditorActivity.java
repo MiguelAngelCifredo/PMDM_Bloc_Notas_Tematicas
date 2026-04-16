@@ -33,7 +33,7 @@ public class EditorActivity extends AppCompatActivity {
 
         etContenido = findViewById(R.id.etContenido);
 
-        // Recuperar el nombre de la categoría y configurar la UI
+        // Recuperar el nombre de la categoría. Si no se proporciona entonces finalizar.
         String categoria = getIntent().getStringExtra("CATEGORIA");
         if (categoria != null) {
             if (getSupportActionBar() != null) {
@@ -41,6 +41,8 @@ public class EditorActivity extends AppCompatActivity {
             }
             nombreFichero = categoria + ".txt";
             leerFichero();
+        } else {
+            finish();
         }
     }
 
@@ -87,8 +89,7 @@ public class EditorActivity extends AppCompatActivity {
 
             osw.write(etContenido.getText().toString());
             Toast.makeText(this, R.string.cambios_guardados, Toast.LENGTH_SHORT).show();
-            finish(); // Volver a la Main
-
+            finish();
         } catch (Exception e) {
             Toast.makeText(this, R.string.error_al_guardar, Toast.LENGTH_SHORT).show();
         }
