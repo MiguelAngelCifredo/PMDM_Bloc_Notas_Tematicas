@@ -3,5 +3,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="mnu_editor">#2196F3</color>
+    <color name="col_urgente">#D32F2F</color>
+    <color name="col_viajes">#1976D2</color>
+    <color name="col_conciertos">#7B1FA2</color>
+    <color name="col_familia">#388E3C</color>
+    <color name="col_amigos">#FBC02D</color>
+    <color name="col_deportes">#E64A19</color>
+    <color name="col_comida">#F06292</color>
+    <color name="col_tecnologia">#455A64</color>
+    <color name="col_ropa">#0097A7</color>
+    <color name="col_cine">#212121</color>
 </resources>

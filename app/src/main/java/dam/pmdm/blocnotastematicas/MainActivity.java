@@ -1,7 +1,9 @@
 package dam.pmdm.blocnotastematicas;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.widget.GridLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,24 +16,41 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         EdgeToEdge.enable(this);
 
-        configurarBoton(R.id.cat_01, R.string.str_urgente);
-        configurarBoton(R.id.cat_02, R.string.str_viajes);
-        configurarBoton(R.id.cat_03, R.string.str_conciertos);
-        configurarBoton(R.id.cat_04, R.string.str_familia);
-        configurarBoton(R.id.cat_05, R.string.str_amigos);
-        configurarBoton(R.id.cat_06, R.string.str_deportes);
-        configurarBoton(R.id.cat_07, R.string.str_comida);
-        configurarBoton(R.id.cat_08, R.string.str_tecnologia);
-        configurarBoton(R.id.cat_09, R.string.str_ropa);
-        configurarBoton(R.id.cat_10, R.string.str_cine);
+        configurarGiroDePantalla();
+
+        configurarBoton(R.id.cat_01);
+        configurarBoton(R.id.cat_02);
+        configurarBoton(R.id.cat_03);
+        configurarBoton(R.id.cat_04);
+        configurarBoton(R.id.cat_05);
+        configurarBoton(R.id.cat_06);
+        configurarBoton(R.id.cat_07);
+        configurarBoton(R.id.cat_08);
+        configurarBoton(R.id.cat_09);
+        configurarBoton(R.id.cat_10);
     }
 
-    private void configurarBoton(int viewId, int stringResId) {
-        findViewById(viewId).setOnClickListener(v -> {
-            String nombreCategoria = getString(stringResId);
+    private void configurarGiroDePantalla() {
+        int orientacion = getResources().getConfiguration().orientation;
+        int filas;
+        int columnas;
 
+        if (orientacion == Configuration.ORIENTATION_LANDSCAPE) {
+            filas = 2;
+            columnas = 5;
+        } else {
+            filas = 5;
+            columnas = 2;
+        }
+        GridLayout grid = findViewById(R.id.miGridLayout);
+        grid.setColumnCount(columnas);
+        grid.setRowCount(filas);
+    }
+
+    private void configurarBoton(int viewId) {
+        findViewById(viewId).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, EditorActivity.class);
-            intent.putExtra("CATEGORIA", nombreCategoria);
+            intent.putExtra("ID_CATEGORIA", v.getId());
             startActivity(intent);
         });
     }

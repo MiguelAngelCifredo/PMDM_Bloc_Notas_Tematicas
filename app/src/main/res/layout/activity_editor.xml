@@ -9,7 +9,6 @@
         android:id="@+id/materialToolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/mnu_editor"
         app:titleTextColor="@color/white" />
 
     <EditText
