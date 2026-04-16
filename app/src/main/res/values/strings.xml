@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Bloc de Notas Temáticas</string>
+
+    <string name="str_urgente">Urgente</string>
+    <string name="str_viajes">Viajes</string>
+    <string name="str_conciertos">Conciertos</string>
+    <string name="str_familia">Familia</string>
+    <string name="str_amigos">Amigos</string>
+    <string name="str_deportes">Deportes</string>
+    <string name="str_comida">Comida</string>
+    <string name="str_tecnologia">Tecnología</string>
+    <string name="str_ropa">Ropa</string>
+    <string name="str_cine">Cine</string>
+
+    <string name="escribe_aqui">Escribe aquí tus notas…</string>
+
+    <string name="mnu_guardar">Guardar</string>
+
+    <string name="cambios_guardados">Cambios guardados</string>
+    <string name="error_al_guardar">Error al guardar</string>
+</resources>
