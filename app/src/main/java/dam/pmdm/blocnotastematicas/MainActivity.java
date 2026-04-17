@@ -31,20 +31,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void configurarGiroDePantalla() {
-        int orientacion = getResources().getConfiguration().orientation;
-        int filas;
-        int columnas;
-
-        if (orientacion == Configuration.ORIENTATION_LANDSCAPE) {
-            filas = 2;
-            columnas = 5;
-        } else {
-            filas = 5;
-            columnas = 2;
-        }
-        GridLayout grid = findViewById(R.id.miGridLayout);
-        grid.setColumnCount(columnas);
-        grid.setRowCount(filas);
+        // Configuración de la rejilla según orientación
+        GridLayout gridLayout = findViewById(R.id.miGridLayout);
+        boolean esLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+        gridLayout.setColumnCount(esLandscape ? 5 : 2);
+        gridLayout.setRowCount(esLandscape ? 2 : 5);
     }
 
     private void configurarBoton(int viewId) {
